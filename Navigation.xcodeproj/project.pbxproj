@@ -18,6 +18,10 @@
 		060782CA250CEE7200A87020 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060782C9250CEE7200A87020 /* Post.swift */; };
 		84051DB9261CD3E100FAD532 /* PhotosToOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051DB8261CD3E100FAD532 /* PhotosToOneCell.swift */; };
 		8442746325F8D2B100403DB0 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8442746225F8D2B100403DB0 /* ProfileHeaderView.xib */; };
+		8445AD46266FD7700094B08B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445AD44266FD54F0094B08B /* NetworkService.swift */; };
+		8445AD49266FD8010094B08B /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445AD48266FD8010094B08B /* AppConfiguration.swift */; };
+		8445AD51266FE9E00094B08B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445AD50266FE9E00094B08B /* NetworkError.swift */; };
+		8445AD54266FE9E70094B08B /* Data+JSONPrettyPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445AD53266FE9E70094B08B /* Data+JSONPrettyPrint.swift */; };
 		84679A2325C9B27F00D09967 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84679A2225C9B27F00D09967 /* LogInViewController.swift */; };
 		84679A5825DAD46C00D09967 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84679A5625DAD46C00D09967 /* ProfileViewController.swift */; };
 		84679A5925DAD46C00D09967 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84679A5725DAD46C00D09967 /* ProfileHeaderView.swift */; };
@@ -43,6 +47,10 @@
 		060782C9250CEE7200A87020 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		84051DB8261CD3E100FAD532 /* PhotosToOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosToOneCell.swift; sourceTree = "<group>"; };
 		8442746225F8D2B100403DB0 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		8445AD44266FD54F0094B08B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		8445AD48266FD8010094B08B /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		8445AD50266FE9E00094B08B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		8445AD53266FE9E70094B08B /* Data+JSONPrettyPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JSONPrettyPrint.swift"; sourceTree = "<group>"; };
 		84679A2225C9B27F00D09967 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		84679A5625DAD46C00D09967 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84679A5725DAD46C00D09967 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -87,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				060782B1250CE27700A87020 /* AppDelegate.swift */,
+				8445AD48266FD8010094B08B /* AppConfiguration.swift */,
 				060782B3250CE27700A87020 /* SceneDelegate.swift */,
 				060782B5250CE27700A87020 /* FeedViewController.swift */,
 				060782B7250CE27700A87020 /* Main.storyboard */,
@@ -111,9 +120,20 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		8445AD43266FD54F0094B08B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8445AD44266FD54F0094B08B /* NetworkService.swift */,
+				8445AD50266FE9E00094B08B /* NetworkError.swift */,
+				8445AD53266FE9E70094B08B /* Data+JSONPrettyPrint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		84679A3C25CDC03000D09967 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				8445AD43266FD54F0094B08B /* Network */,
 				84A64F8125EEB6E400725000 /* CollectionView */,
 				84679A6125DAE0C100D09967 /* PostsViewController */,
 				84679A5F25DAE0C100D09967 /* Storage */,
@@ -221,22 +241,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8445AD49266FD8010094B08B /* AppConfiguration.swift in Sources */,
 				84A64F8E25EEBDEC00725000 /* PhotosTableViewCell.swift in Sources */,
 				84679A6E25DAE24200D09967 /* PostsViewController.swift in Sources */,
 				84051DB9261CD3E100FAD532 /* PhotosToOneCell.swift in Sources */,
 				84A64F8C25EEBDE900725000 /* PhotosCollectionViewCell.swift in Sources */,
 				84A64F8A25EEBDE600725000 /* PhotosViewController.swift in Sources */,
+				8445AD46266FD7700094B08B /* NetworkService.swift in Sources */,
 				060782B6250CE27700A87020 /* FeedViewController.swift in Sources */,
 				84679A5925DAD46C00D09967 /* ProfileHeaderView.swift in Sources */,
 				84679A5825DAD46C00D09967 /* ProfileViewController.swift in Sources */,
 				060782B2250CE27700A87020 /* AppDelegate.swift in Sources */,
 				84A64F8825EEBDE100725000 /* Storage.swift in Sources */,
 				84679A2325C9B27F00D09967 /* LogInViewController.swift in Sources */,
+				8445AD54266FE9E70094B08B /* Data+JSONPrettyPrint.swift in Sources */,
 				060782C6250CEB0A00A87020 /* InfoViewController.swift in Sources */,
 				84679A6C25DAE24000D09967 /* PostTableViewCell.swift in Sources */,
 				060782CA250CEE7200A87020 /* Post.swift in Sources */,
 				060782B4250CE27700A87020 /* SceneDelegate.swift in Sources */,
 				060782C8250CEE5D00A87020 /* PostViewController.swift in Sources */,
+				8445AD51266FE9E00094B08B /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
