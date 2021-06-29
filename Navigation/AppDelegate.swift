@@ -10,44 +10,21 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
-    var appConfiguration: AppConfiguration?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        appConfiguration = AppConfiguration.random()
-        givingData()
+        guard let urlFirst = URL(string: "https://jsonplaceholder.typicode.com/todos/1") else { fatalError() }
+        
+        JsonParsing.parsingFirstTask(url: urlFirst)  { string in
+        }
+        
+        guard let urlSecond = URL(string: "https://swapi.dev/api/planets/1/") else { fatalError() }
+        
+        JsonParsing.parsingSecondTask(url: urlSecond)  { string in
+        }
         
         return true
     }
-    
-    
-    private func givingData() {
-        guard let appConfiguration = appConfiguration,
-              let apiUrl = URL(string: appConfiguration.rawValue) else {
-            return
-        }
-        
-        print("Giving data from \(apiUrl)")
-                
-        NetworkService.startDataTask(with: apiUrl) { result in
-
-            switch result {
-            case .failure(let error):
-                // In case of no Internet
-                // Code=-1009 "The Internet connection appears to be offline."
-                print(error.localizedDescription)
-
-            case .success(let (response, data)):
-                print("Received data:")
-                if let humanReadable = data.prettyJson { print(humanReadable) }
-                print("Status code: \(response.statusCode)")
-                print("All header fields:")
-                response.allHeaderFields.forEach { print("    \($0): \($1)") }
-            }
-        }
-    }
- 
     
     // MARK: UISceneSession Lifecycle
 

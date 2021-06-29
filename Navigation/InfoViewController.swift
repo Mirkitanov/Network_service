@@ -6,14 +6,46 @@
 //  Copyright © 2020 Artem Novichkov. All rights reserved.
 //
 
+
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
+    var textForLabel: String?
+    var textOrbitalLabel: String?
+    
+    let textLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let orbitalLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .yellow
+        setupLabels()
+    }
+    
+    private func setupLabels() {
+        view.addSubview(textLabel)
+        view.addSubview(orbitalLabel)
+        textLabel.text = JsonParsing.textForLabel
+        orbitalLabel.text = JsonParsing.orbital
+        
+        let constraints = [
+            orbitalLabel.bottomAnchor.constraint(equalTo: textLabel.topAnchor, constant: -5),
+            orbitalLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textLabel.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -15),
+            textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ]
+        
+        NSLayoutConstraint.activate(constraints)
     }
     
     @IBAction func showAlert(_ sender: Any) {
